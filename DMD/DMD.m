@@ -14,7 +14,6 @@ X2 = X(:,2:M);
 % take svd of X_1^M-1
 [U,S,V] = svd(X1,0);
 perc = cumsum(diag(S))/sum(diag(S));
-%scatter(1:size(S,1),perc);
 K = find(perc > svTol,1);
 
 % truncated SVD
@@ -34,10 +33,6 @@ omegat = log(diag(Lt))/deltat;
 % % reconstruct eigendecompostion of A
 VSWt = Vt * St^(-1) * Wt;
 Phit = X2 * VSWt; % N x K
-
-
-
-
 
 
 % approx soln for future
