@@ -1,14 +1,33 @@
 function [dict, nD, params] = CosDictWrap(numModes, tSpan)
+% This function will make a dictionary that is used as part of 
+% the crime data dictionary. Each prototype is like a Gaussian,
+% but can wrap around the time domain. We use a cosine to make 
+% the wrapping easier, but only one period of the cosine.
+%
+% INPUTS: 
+%
+% numModes: 
+%       scalar: roughly how many prototypes do you want? It won't 
+%       be exact in this version because of the way I'm rounding,
+%       but CrimeComboDict compensates.
+%
+% tSpan: 
+%       time range to define prototype on
+%
+% OUTPUTS:
+%
+% dict
+%       matrix: library/dictionary (each column is a prototype)
+%
+% nD
+%       scalar: number of prototypes in library/dictionary
+%
+% params
+%       matrix: parameters, one row for each prototype
+%       This enables us to later remember which element of the library 
+%       corresponds to which analytical expression
+%
 
-% This function will make a dictionary that is used as part of the crime data dictionary
-
-% input: 
-% numModes: roughly how many columns do you want?
-%   won't be exact in this version because of the way I'm rounding
-% tSpan: time range to evaluate on
-
-% output:
-% dictionary (each column is a mode)
 deltat = tSpan(2)-tSpan(1);
 
 % want original to be cos(x) shifted up and squished: (1/2)cos(x)+1

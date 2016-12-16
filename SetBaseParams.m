@@ -1,3 +1,7 @@
+% sets default parameters and saves them in a .mat file. 
+% Scripts starting with "Experiment" load this .mat file and optionally change some parameters.
+% Then they call BaseExperiment.m 
+
 decompfn = @(X, R, D, tau, init, nD) cp_sparse(X, R, D, tau, init, nD);
 
 time = 0:1:128;

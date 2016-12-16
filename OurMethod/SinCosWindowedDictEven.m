@@ -1,5 +1,32 @@
 function [dict, nD, params] = SinCosWindowedDictEven(numModes, time, ...
     fixedParams)
+% This function will make a dictionary of windowed sines and cosines
+%
+% INPUTS: 
+%
+% numModes: 
+%       scalar: how many prototypes do you want? 
+%
+% tSpan: 
+%       time range to define prototype on
+%
+% fixedParams:
+%       sometimes for comparison, want to "cheat" and request that 
+%       prototypes with certain parameters are included 
+%
+% OUTPUTS:
+%
+% dict
+%       matrix: library/dictionary (each column is a prototype)
+%
+% nD
+%       scalar: number of prototypes in library/dictionary
+%
+% params
+%       matrix: parameters, one row for each prototype
+%       This enables us to later remember which element of the library 
+%       corresponds to which analytical expression
+%
 
 rng(1); 
 
@@ -9,12 +36,6 @@ end
 
 % Only using real modes (sines and cosines)
 
-% input: 
-% numModes: roughly how many columns do you want?
-%   won't be exact in this version because of the way I'm rounding
-
-% output:
-% dictionary (each column is a mode)
 
 % combination roughly equal of
 % numbers of omega values vs. number of windows

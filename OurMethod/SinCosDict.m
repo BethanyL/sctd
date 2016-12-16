@@ -1,11 +1,19 @@
 function dict = SinCosDict(time, omegaList)
-
-% inputs: 
-% time: vector over which the modes should be evaluated, i.e. 0:.1:10
-% omegaList: vector of real #s: modes are sin(omega*time), cos(omega*time)
-
-% output:
-% dictionary of sine and cosine modes as columns
+% This function will make a dictionary of sines and cosines (no windows)
+%
+% INPUTS: 
+%
+% time: 
+%       time range to define prototype on
+%
+% omegaList:
+%       vector of real #s: we create sin(omega*time), cos(omega*time)
+%
+% OUTPUTS:
+%
+% dict
+%       matrix: library/dictionary (each column is a prototype)
+%
 
 numOmegas = length(omegaList);
 

@@ -1,4 +1,28 @@
 function [dict, nD, params] = NOAAComboDictEven(numModes, tSpan)
+% This function will make a dictionary that is used for
+% the NOAA data. 
+%
+% INPUTS: 
+%
+% numModes: 
+%       scalar: how many prototypes do you want? 
+%
+% tSpan: 
+%       time range to define prototype on
+%
+% OUTPUTS:
+%
+% dict
+%       matrix: library/dictionary (each column is a prototype)
+%
+% nD
+%       scalar: number of prototypes in library/dictionary
+%
+% params
+%       matrix: parameters, one row for each prototype
+%       This enables us to later remember which element of the library 
+%       corresponds to which analytical expression
+%
 
 numEach = round(numModes/2);
 [dict1, nD1, params1] = SinCosWindowedDictEven(numEach, tSpan);

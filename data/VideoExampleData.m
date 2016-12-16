@@ -1,9 +1,25 @@
 function [xbar, ktensorVersion] = VideoExampleData(backflag, plotflag)
 % video stream mrDMD example from "Multi-Resolution Dynamic Mode
 % Decomposition paper" Figures 3 & 4, Section 4.1
+% 
+% INPUTS:
+%
+% backflag
+%       if non-zero, include the background mode
+%       (we don't use background in this paper)
+%
+% plotflag
+%       if non-zero, plot some frames
+%
+% OUTPUTS:
+%
+% xbar
+%       3D matrix video generated
+%
+% ktensorVersion
+%       same data as xbar, but in form of a Kruskal tensor
+%
 
-% plotflag = 1: show some frames
-% backflag = 1: add in background
 
 % 4 spatio-temporal modes combined \bar{\Psi}_j
 % time dynamics a_j(t) 

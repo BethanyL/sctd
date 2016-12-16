@@ -1,4 +1,5 @@
 % prepare NOAA data
+% We use the NOAA_OI_SST_V2 dataset from https://www.esrl.noaa.gov/psd/
 % want 1990 to 2010 
 % file contains weekly means from 1989/12/31 to 2016/04/03 .
 

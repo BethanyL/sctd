@@ -1,14 +1,30 @@
 function [dict, nD, params] = GaussianDict(numModes, tSpan)
-
-% This function will make a dictionary that is used as part of the crime data and NOAA dictionaries
-
-% input: 
-% numModes: roughly how many columns do you want?
-%   won't be exact in this version because of the way I'm rounding
-% tSpan: time range to evaluate on
-
-% output:
-% dictionary (each column is a mode)
+% This function will make a dictionary that is used as part of the crime data 
+% and NOAA dictionaries. Each element is a Gaussian. 
+%
+% INPUTS: 
+%
+% numModes: 
+%       scalar: roughly how many prototypes do you want? It won't 
+%       be exact in this version because of the way I'm rounding,
+%       but CrimeComboDict.m and NOAAComboDictEven.m compensate.
+%
+% tSpan: 
+%       time range to define prototype on
+%
+% OUTPUTS:
+%
+% dict
+%       matrix: library/dictionary (each column is a prototype)
+%
+% nD
+%       scalar: number of prototypes in library/dictionary
+%
+% params
+%       matrix: parameters, one row for each prototype
+%       This enables us to later remember which element of the library 
+%       corresponds to which analytical expression
+%
 
 gaussfn = @(x,mu,sigma) (1/(sigma*sqrt(2*pi))) * exp(-(x-mu).^2/(2*sigma^2));
 

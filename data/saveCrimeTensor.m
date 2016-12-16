@@ -1,3 +1,5 @@
+% load csv files created from saveCrimeTensor.R. Form them into a tensor and save as .mat file.
+
 aa = csvread('hour-by-beat_AggravatedAssault2.csv',1,1);
 at = csvread('hour-by-beat_AutoTheft2.csv',1,1);
 b = csvread('hour-by-beat_Burglary2.csv',1,1);

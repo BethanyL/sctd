@@ -22,7 +22,7 @@ function [error, corr, sparsity] = BaseExperiment(decompfn, dictfn, dataname, in
 %           the prototypes
 %
 % dataname 
-%           string for filename of mat file where data is stored
+%           string for filename of mat file where data is stored as X
 %
 % initfnA
 %           function that initializes first component of the decomposition,
@@ -77,8 +77,8 @@ function [error, corr, sparsity] = BaseExperiment(decompfn, dictfn, dataname, in
 %           initializes the coefficients Z.
 %
 % expnum
-%           scalar: experiment number (used for saving results in
-%           appropriate folder)
+%           a string giving the experiment "number," such as "A1" - this 
+%           determines the subdirectory where the results are saved
 %
 % trialnum
 %           scalar: trial number within experiment (used for saving results

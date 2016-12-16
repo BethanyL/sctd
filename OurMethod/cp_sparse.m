@@ -1,10 +1,46 @@
 function [A,B,Z,lambda,objs] = cp_sparse(X, R, D, tau, init, nD)
-%CP_SPARSE Compute a CP decomposition that is sparse in one of its modes.
+% Compute a CP decomposition that is sparse in one of its modes.
 %
 %   Computes an estimate of the best rank-R CP
 %   model of a tensor X when one set of factors is approximated by a
-%   sparse combination of dictionary elements. The input X can
-%   be a tensor or sptensor. The result M is a ktensor.  
+%   sparse combination of dictionary elements. 
+%
+% INPUTS:
+% 
+% X
+%           3-D data 
+%
+% R
+%           scalar: number of terms of decomposition to search for at once 
+%           (current algorithm only does 1 at a time)  
+%
+% D
+%           library (aka dictionary): matrix of size [m x nD], where m is 
+%           the size of the third dimension, c, and nD is the number of 
+%           prototypes in the library  
+%
+% tau
+%           scalar: regularization parameter
+%
+% init
+%           cell array of length 3 containing 3 vectors: initial values for
+%           A, B, and Z           
+%
+% nD
+%           number of prototypes in D
+%
+%
+% OUTPUTS:
+% 
+% A, B, Z
+%           decomposition matrices, where each has R columns 
+%
+% lambda
+%           coefficients of decomposition: each of R terms is ktensor(lambda(r),a,b,D*z),
+%           where a, b, and z are columns of A, B, and Z.
+%
+% obj
+%           vector of values of objective function for each iteration
 %
 
 max_iter = 1e1;

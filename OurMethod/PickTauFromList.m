@@ -1,4 +1,25 @@
 function [tau, ind, maxslope, maxdiff] = PickTauFromList(tauopts, Y, R, D, init, npq, decompfn, nD, oldtau)
+%
+% have list of tau options, pick the best one (no recursion or creating any other tau options - restricted
+% to ONLY this list)
+% called by PickBestTau.m and RecurseZoomTau.m 
+% for explanation of inputs and context, see PickBestTau.m or RecurseZoomTau.m
+%
+% OUTPUTS:
+%
+% tau
+%       scalar: chosen regularization parameter
+%
+% ind
+%       index of tauopts where tau was found
+%
+% maxslope
+%       scalar: how much (in abs value) does BIC fn change in neighborhood of tau? (If big change,
+%       might want to zoom in further to investigate neighbors)
+%
+% maxdiff
+%       what's the farthest that tau's neighbors are? (If close, don't want to zoom in further)
+%
 
     bic_sqn = CompareTauSqn(tauopts, Y, R, D, init, npq, decompfn, nD);
     [val, ind] = min(bic_sqn);

@@ -1,8 +1,33 @@
 function [recon,omegat,U] =  DMD(X, time, svTol)
 % DMD algorithm
-
-% might want to have default of svTol = 1 (don't truncate singular values)
-
+%
+% INPUTS:
+% 
+% X 
+%       data matrix, where each column is a different time 
+%
+% time
+%       vector of time points when the snapshots in the data were taken
+%       (i.e. 1, 2, 3, ... for most videos)
+%
+% svTol
+%       scalar in [0, 1]: tolerance for truncating singular value 
+%       decomposition. This is the percentage of "energy" to keep: 
+%       keep the singular values such that 
+%       cumsum(diag(St))/sum(diag(St)) > svTol, where St is the
+%       set of singular values maintained.
+%
+% OUTPUTS:
+%
+% recon
+%       matrix, reconstruction of X using DMD 
+%
+% omegat
+%       vector of frequencies omega
+%
+% U
+%       matrix: left singular vectors 
+%
 
 
 deltat = time(2) - time(1);

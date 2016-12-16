@@ -1,15 +1,30 @@
 function [windowDict, params] = CreateWindowed(dictOrig, time, widthList, shiftList)
-
-% inputs: 
-% dictOrig is a dictionary of modes
-% time is a vector, i.e. 0:.1:10
-% widthList is a vector of widths for windows: each window is tau +-
-% width/2
-% shiftList is a vector of the centers (tau) of the windows
-
-% output:
-% windowDict is copies of dictOrig but with windows applied. Note that this
-% will not include the original dictionary.
+% input a library/dictionary and output a version that is windowed 
+%
+% INPUTS: 
+%
+% dictOrig 
+%       dictionary, with each column as a different prototype
+%
+% time
+%       time range that the prototypes are defined on, i.e. 0:.1:10
+%
+% widthList 
+%       vector of widths for windows: each window is tau +- width/2
+%
+% shiftList 
+%       vector of the centers (tau) of the windows
+%
+% OUTPUTS:
+%
+% windowDict
+%       copies of dictOrig but with windows applied. Note that this
+%       will not include the original dictionary.
+%
+% params
+%       matrix where each row is an element of windowDict, giving the 
+%       parameters (width, tau) for each element 
+%
 
 numItems = size(dictOrig,2);
 lenTime = length(time);

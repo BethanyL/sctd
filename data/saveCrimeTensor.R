@@ -1,7 +1,13 @@
+# use Houston crime data, included as part of the ggmap package
+
 library(ggmap)
 
+# We obtained this csv file from the Houston Police Beats page of the City of Houston GIS Open Data web site
+# http://cohgis.mycity.opendata.arcgis.com/
 beats_table <- read.csv(file="Houston_Police_Beats.csv",head=TRUE,sep=",")
 colnames(beats_table)[1] = "Beats"
+
+# reorder the beats so that we can map them later 
 beat_ordering <- beats_table$Beats
 plottable_crimes = subset(crime, beat%in% beat_ordering)
 
