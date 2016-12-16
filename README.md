@@ -24,3 +24,21 @@ The data folder contains code for setting up the example datasets from the paper
 The R script saveCrimeTensor.R uses the crime dataset provided in the R package ggmap. This data was collected by the Houston Police Department in 2010. We describe it further in section V.A. of our paper. We use Houston_Police_Beats.csv to reorder the beats to make them easier to map later. We obtained this csv file from the Houston Police Beats page of the [City of Houston GIS Open Data web site] (http://cohgis.mycity.opendata.arcgis.com/datasets/fb3bb02ec56c4bb4b9d0cf3b8b3e5545_4?uiTab=table&geometry=-96.701%2C29.619%2C-94.087%2C29.977). We save the subset of crime data that we are interested in as csv files. Then we use saveCrimeTensor.m to load these csv files, create a tensor, and save it as a .mat file for use in experiments. 
 
 The script prepareNOAAdata.m does some preprocessing to a dataset of ocean surface temperatures downloaded from [NOAA's website](http://www.esrl.noaa.gov/psd/). We specifically used the NOAA_OI_SST_V2 dataset. We use this example in Section V.B. of our paper. 
+
+Here is a listing of which experiments were used for each figure:
+
+Figure 5: A1, B1, C1
+
+Figure 6: A1
+
+Figure 7: A2, A3, A4
+
+Figure 8: A5-A45
+
+Figure 9: A46-A75
+
+Figure 10: A76
+
+Figure 11: B2
+
+Figures 12 and 13: A77
