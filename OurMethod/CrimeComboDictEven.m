@@ -5,7 +5,8 @@ function [dict, nD, params] = CrimeComboDictEven(numModes, tSpan)
 % INPUTS: 
 %
 % numModes: 
-%       scalar: how many prototypes do you want? 
+%       scalar: roughly how many prototypes do you want? It won't 
+%       be exact in this version because of the way I'm rounding.
 %
 % tSpan: 
 %       time range to define prototype on

@@ -8,8 +8,7 @@ function [dict, nD, params] = CosDictWrap(numModes, tSpan)
 %
 % numModes: 
 %       scalar: roughly how many prototypes do you want? It won't 
-%       be exact in this version because of the way I'm rounding,
-%       but CrimeComboDict compensates.
+%       be exact in this version because of the way I'm rounding.
 %
 % tSpan: 
 %       time range to define prototype on

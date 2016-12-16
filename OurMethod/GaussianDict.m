@@ -6,8 +6,7 @@ function [dict, nD, params] = GaussianDict(numModes, tSpan)
 %
 % numModes: 
 %       scalar: roughly how many prototypes do you want? It won't 
-%       be exact in this version because of the way I'm rounding,
-%       but CrimeComboDict.m and NOAAComboDictEven.m compensate.
+%       be exact in this version because of the way I'm rounding.
 %
 % tSpan: 
 %       time range to define prototype on

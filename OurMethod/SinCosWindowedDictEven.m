@@ -5,7 +5,9 @@ function [dict, nD, params] = SinCosWindowedDictEven(numModes, time, ...
 % INPUTS: 
 %
 % numModes: 
-%       scalar: how many prototypes do you want? 
+%       scalar: how many prototypes do you want? This will be exact
+%       because round up and then randomly remove some so that we have
+%       the exact right number. 
 %
 % tSpan: 
 %       time range to define prototype on
