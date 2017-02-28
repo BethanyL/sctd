@@ -112,6 +112,7 @@ function [error, corr, sparsity] = BaseExperiment(decompfn, dictfn, dataname, in
 %           scalar: number of non-zeros in Z (number of prototypes in
 %           library that are actually used)
 %
+tic 
 if nargin < 20
     diffThreshold = 10^(-2);
 end
@@ -168,3 +169,5 @@ csvwrite(strcat(filedir,'B.csv'),B);
 csvwrite(strcat(filedir,'Z.csv'),Z);
 csvwrite(strcat(filedir,'X.csv'),X);
 csvwrite(strcat(filedir,'params.csv'),params);
+t = toc;
+csvwrite(strcat(filedir,'seconds_elapsed.csv'),t);
